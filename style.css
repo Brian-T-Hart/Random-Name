@@ -1,0 +1,16 @@
+#getNameButton {
+	margin-top: 200px;
+	font-size: 48px;
+	object-position: center;
+}
+
+#column1 {
+	margin: auto;
+	width: 100%;
+}
+
+#name {
+	font-size: 98px;
+	text-align: center;
+	margin-top: 20px;
+}

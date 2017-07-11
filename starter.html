@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Random Name</title>
+  <!-- reset css file -->
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+  <!-- Bootstrap File -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- my css file -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+
+<body>
+	<div id="mainContainer" class="container-fluid">
+		<div id="row1" class="row">
+			<div id="column1">
+			<button id="getNameButton" type="button" class="btn btn-primary center-block">Get Name</button>
+			<p id="name"></p>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+var names = ['Eric Smyrski', 'Scott Bout', 'Anthony Alvarez', 'Sarah Rincon', 'Airam Contreras', 'Angeline Liu', 'Julian Ochoa', 'Joey Galkowski', 'Tony Moon', 'Jim Luo', 'James Li', 'Julia Nail', 'Fernanda Corona', 'Sunny Lee', 'Shyan Shokrzadeh', 'Grant Cuevas', 'Jaewon Choi', 'Mehul Sonowal', 'Chris An', 'Jisoo Kim', 'Michelle Kim', 'Taylor Nguyen'];
+var randomNumber = 0;
+var randomName = "";
+
+// $(document).ready(arrayFun);
+$('#getNameButton').click(getName);
+
+
+function getName() {
+  randomNumber = Math.floor((Math.random() * names.length));
+  randomName = names[randomNumber];
+  $('#name').html(randomName);
+  }
+
+</script>
+<body>
+</html>
