@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <title>Random Name</title>
   <!-- reset css file -->
-  <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <!-- Bootstrap File -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- my css file -->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
 </head>
@@ -20,24 +20,68 @@
 			<div id="column1">
 			<button id="getNameButton" type="button" class="btn btn-primary center-block">Get Name</button>
 			<p id="name"></p>
+      <p id="image"></p>
 			</div>
 		</div>
 	</div>
 
 <script type="text/javascript">
-var names = ['Eric S', 'Scott B', 'Anthony A', 'Sarah R', 'Airam C', 'Angeline L', 'Julian O', 'Joey G', 'Tony M', 'Jim L', 'James L', 'Julia N', 'Fernanda C', 'Sunny L', 'Shyan S', 'Grant C', 'Jaewon C', 'Mehul S', 'Chris A', 'Jisoo K', 'Michelle K', 'Taylor N'];
+var names = ['Eric', 'Scott', 'Anthony', 'Sarah', 'Airam', 'Angeline', 'Julian', 'Joey', 'Tony', 'Jim', 'James', 'Julia', 'Fernanda', 'Sunny', 'Shyan', 'Grant', 'Jaewon', 'Mehul', 'Chris', 'Jisoo', 'Michelle', 'Taylor'];
+var namesSelected = [];
 var randomNumber = 0;
 var randomName = "";
+var allNamesCalled = false;
+var x = false;
 
-// $(document).ready(arrayFun);
 $('#getNameButton').click(getName);
+
+function reset() {
+  randomNumber = 0;
+  randomName = "";
+  allNamesCalled = false;
+  for (var i = 0; i < names.length; i++) {
+    namesSelected[i] = i;
+  }
+  getName();
+}
+
+function compareArrays(a,b) {
+  allNamesCalled = true;
+  for (var i = 0; i < names.length; i++) {
+    if (a[i] != b[i]) {
+      allNamesCalled = false;
+      } 
+    // else {
+    //   allNamesCalled = true;
+    // }
+  }
+}
 
 
 function getName() {
+  compareArrays(names,namesSelected);
   randomNumber = Math.floor((Math.random() * names.length));
   randomName = names[randomNumber];
-  $('#name').html(randomName);
-  }
+  x = namesSelected.includes(randomName);
+    
+    if (x == false && allNamesCalled == false) {
+      namesSelected[randomNumber] = randomName;
+      $('#name').html(randomName);
+      $('#image').html('<img src="assets/images/' + randomName + '.png">');
+      console.log(x);
+      console.log(namesSelected);
+      console.log(names);
+    }
+
+    else if (x === true && allNamesCalled === false) {
+      console.log('the name already exists');
+      getName();
+    }
+
+    else {
+      reset();
+    }
+    }
 
 </script>
 <body>

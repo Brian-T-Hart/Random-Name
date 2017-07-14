@@ -1,5 +1,5 @@
 #getNameButton {
-	margin-top: 200px;
+	margin-top: 80px;
 	font-size: 48px;
 	object-position: center;
 }
@@ -13,4 +13,8 @@
 	font-size: 98px;
 	text-align: center;
 	margin-top: 20px;
+}
+
+#image {
+	text-align: center;
 }
