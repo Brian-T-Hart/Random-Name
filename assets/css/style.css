@@ -1,20 +1,44 @@
-#getNameButton {
-	margin-top: 80px;
-	font-size: 48px;
-	object-position: center;
+#cosmosButton {
+	font-size: 24px;
+	display: block;
+	margin-top: 70px;
+	float: right;
 }
 
-#column1 {
+#inOrderButton {
+	font-size: 24px;
+	display: block;
+	margin-top: 70px;
+	float: left;
+}
+
+#row1 {
+	width: 20%;
+	display: block;
 	margin: auto;
-	width: 100%;
 }
 
 #name {
-	font-size: 98px;
+	font-size: 72px;
 	text-align: center;
 	margin-top: 20px;
+	/* opacity: 0.0; */
+}
+
+#name:hover {
+	opacity: 0.75;
 }
 
 #image {
-	text-align: center;
+	display: block;
+	margin: auto;
+	width: 600px;
+	height: 600px;
+}
+
+img {
+	display: block;
+	margin: auto;
+	height: 400px;
+	width: auto;
 }

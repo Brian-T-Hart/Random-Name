@@ -12,7 +12,6 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
-
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <span>
@@ -38,18 +37,18 @@
 
 <body>
 	<div id="mainContainer" class="container-fluid">
-		<div id="row1" class="row">
+    <div id="row1" class="row">
         <button id="cosmosButton" type="button" class="btn btn-primary getNameButton">Random</button>
         <button id="inOrderButton" type="button" class="btn btn-primary getNameButton">In Order</button>
     </div>
     <div id="row2" class="row">
         <p id="name"></p>
         <p id="image"></p>
-		</div>
-	</div>
+    </div>
+  </div>
 
 <script type="text/javascript">
-var names = ['Lauren Altuna', 'Chloe An', 'Jadyen Arana', 'Chad Beauchamp', 'Ryleh Bones', 'Charlyse Clark', 'Alejandro Godinez', 'Gary He', 'Lauren Herrera', 'Katie Kovats', 'Alison Lee', 'Agnes Li', 'Thomas Luo', 'Eric Morrison', 'Hunter Morrison', 'Ryan Munoz', 'Reghan Neal', 'Suhani Patel', 'Bernice Preciado', 'Christina Reeder', 'Silas Shim', 'Andrew White', 'Jerry Yang', 'Samantha Zepeda'];
+var names = ['Kate Back', 'Elijah Camarena', 'Samuel Clemente', 'Leony Concepcion', 'Hunter De Los Santos', 'Alexander Gilson', 'Abbie Goshen', 'Faith Grant', 'Clay Hamar', 'Bob Han', 'Deborah Heller', 'Sarah Lopez', 'Joshua Melchor', 'Monet Munoz', 'Malik Nevarez', 'Zoe Poulis', 'Magnolia Rivas', 'Justin Rohde', 'Matthew Sanchez', 'Dominic Schroth', 'Faith Segura', 'Connor Sorensen', 'Chloe Subia', 'Hannah Tobin', 'Adriana Trujillo'];
 var namesSelected = [];
 var randomNumber = 0;
 var randomName = "";
@@ -85,7 +84,7 @@ function getName() {
     if (x == false && allNamesCalled == false) {
       namesSelected[randomNumber] = randomName;
       $('#name').html(randomName);
-      $('#image').html('<img src="assets/images/period2/' + randomName + '.png">');
+      $('#image').html('<img src="assets/images/period3/' + randomName + '.png">');
     }
 
     else if (x === true && allNamesCalled === false) {
@@ -96,13 +95,13 @@ function getName() {
     else {
       reset();
     }
-  }
+    }
 
 function getNamesInOrder () {
   i = count;
   var name = names[i];
   $('#name').html(name);
-  $('#image').html('<img src="assets/images/period2/' + name + '.png">');
+  $('#image').html('<img src="assets/images/period3/' + name + '.png">');
     if (count === names.length) {
       count = 0;
     }
@@ -121,6 +120,7 @@ function displayTime() {
 }
 
 displayTime();
+
 $('#cosmosButton').click(getName);
 $('#inOrderButton').click(getNamesInOrder);
 </script>
